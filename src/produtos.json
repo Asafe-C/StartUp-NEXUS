@@ -1,0 +1,411 @@
+{
+  "colecionaveis": [
+    {
+      "id": "CL0",
+      "img": "/src/images/produtos/Colecionaveis/bottons-hra.png",
+      "nome": "Bottons de Animes e Desenhos",
+      "desc": "100 bottons 3,5cm de BTS, K-Pop, Anime, Rock, Temas Geek, Now United",
+      "preco": 32.2
+    },
+    {
+      "id": "CL1",
+      "img": "/src/images/produtos/Colecionaveis/bottons-hra.png",
+      "nome": "Bottons de Super Heróis",
+      "desc": "10 bottons 3,5cm de Super Heróis, HQs e Temas Geek.",
+      "preco": 5.99
+    },
+    {
+      "id": "CL2",
+      "img": "/src/images/produtos/Colecionaveis/3 Street.png",
+      "nome": "Chaveiros Emborrachados Street Fighter",
+      "desc": "Chaveiros emborrachados de Street Fighter: Chun Li, Ken, Ryu",
+      "preco": 4.96
+    },
+    {
+      "id": "CL3",
+      "img": "/src/images/produtos/Colecionaveis/chaveiro-variados.png",
+      "nome": "Chaveiros Variados",
+      "desc": "Chaveiros de borracha variados de anime, geek, 12 unidades.",
+      "preco": 13.49
+    },
+    {
+      "id": "CL4",
+      "img": "/src/images/produtos/Colecionaveis/ade-Darth.png",
+      "nome": "Adesivo Darth Vader",
+      "desc": "Adesivo do Darth Vader...",
+      "preco": 3.33
+    },
+    {
+      "id": "CL5",
+      "img": "/src/images/produtos/Colecionaveis/ade-animaa.png",
+      "nome": "Adesivos de Personagens Geek",
+      "desc": "Stickers de Personagens Geek | 64 unidades",
+      "preco": 64.0
+    },
+    {
+      "id": "CL6",
+      "img": "/src/images/produtos/Colecionaveis/Martelo-Thor.png",
+      "nome": "Abridor - Martelo Thor",
+      "desc": "Abridor de garrafas com design de Martelo Thor",
+      "preco": 30.7
+    },
+    {
+      "id": "CL7",
+      "img": "/src/images/produtos/Colecionaveis/warcraft.png",
+      "nome": "Martelo do World of Warcraft",
+      "desc": "Martelo da Perdição Abridor de Garrafas World of Warcraft",
+      "preco": 27.09
+    }
+  ],
+  "cosplays": [
+    {
+      "id": "CY0",
+      "img": "/src/images/produtos/Cosplays/shuriken.png",
+      "nome": "Kit Armas Ninja",
+      "desc": "Este kit é um acessório perfeito para eventos geeks, temáticos de anime ou cosplay. Ele inclui uma variedade de armas ninja na cor preta: Sai, Shuriken e Ninjato.",
+      "preco": 69.1
+    },
+    {
+      "id": "CY1",
+      "img": "/src/images/produtos/Cosplays/cosplay-yumeko.png",
+      "nome": "Cosplay Yumeko Jabami",
+      "desc": "Traje de cosplay do personagem Yumeko Jabami do anime “Kakegurui”. Inclui um blazer escuro, camisa branca e saia plissada.",
+      "preco": 299.99
+    },
+    {
+      "id": "CY2",
+      "img": "/src/images/produtos/Cosplays/mascara-demonS.png",
+      "nome": "Máscara Demon Slayer",
+      "desc": "Réplique inspirada no personagem Tanjiro do anime “Demon Slayer: Kimetsu no Yaiba”. Design branco com detalhes em vermelho e preto.",
+      "preco": 30.9
+    },
+    {
+      "id": "CY3",
+      "img": "/src/images/produtos/Cosplays/cosplay-bruxo.png",
+      "nome": "Cosplay Bruxo - HR",
+      "desc": "Conjunto inspirado em trajes de bruxos e bruxas, incluindo capa, chapéu, varinha e outros acessórios.",
+      "preco": 159.0
+    }
+  ],
+  "decoracoes": [
+    {
+      "id": "DC0",
+      "img": "/src/images/produtos/decoracao/joy-quadro.png",
+      "nome": "Quadro Gamer Geek Moderno",
+      "desc": "Quadro Decorativo Video Game Geek Moderna Para Sala Quarto",
+      "preco": 212.12
+    },
+    {
+      "id": "DC1",
+      "img": "/src/images/produtos/decoracao/quadro-ae.png",
+      "nome": "Quadro Gamer",
+      "desc": "Quadro Gamer Vídeo Game Decoração Quarto Playstation Xbox",
+      "preco": 61.1
+    },
+    {
+      "id": "DC2",
+      "img": "/src/images/produtos/decoracao/quadro-joy.png",
+      "nome": "Quadro gamer - geek",
+      "desc": "Quadro Decorativo Game Geek Gamer Play Quarto Para Hall Sala",
+      "preco": 89.9
+    },
+    {
+      "id": "DC3",
+      "img": "/src/images/produtos/decoracao/luminaria-geek.png",
+      "nome": "Luminária Geek",
+      "desc": "Luminária Geek How I Met Your Mother",
+      "preco": 35.55
+    },
+    {
+      "id": "DC4",
+      "img": "/src/images/produtos/decoracao/almofa-harry.png",
+      "nome": "Almofada Lufa Lufa",
+      "desc": "Almofada Veludo Casas Hogwarts Lufa Lufa Harry Potter Geek",
+      "preco": 30.27
+    },
+    {
+      "id": "DC5",
+      "img": "/src/images/produtos/decoracao/almofada-joy.png",
+      "nome": "4 Capas de almofada Gamer",
+      "desc": "Kit 4 Capas De Almofada 40cm Video Game Zíper Invisível",
+      "preco": 46.35
+    },
+    {
+      "id": "DC6",
+      "img": "/src/images/produtos/decoracao/block-lumi.png",
+      "nome": "Abajur de Mesa (Bloco do Mario)",
+      "desc": "Luminaria Abajur De Mesa Bloco Charada Mario Bros Geek",
+      "preco": 58.99
+    },
+    {
+      "id": "DC7",
+      "img": "/src/images/produtos/decoracao/goku-lumi.png",
+      "nome": "Abajur Dragon Ball",
+      "desc": "Abajur Geek Modelo Dragon Ball Em Mdf Colorido Bateria+led",
+      "preco": 52.3
+    }
+  ],
+  "jogos": [
+    {
+      "id": "JG0",
+      "img": "/src/images/produtos/jogos/mario-jog.png",
+      "nome": "Super Mario Odyssey | Mídia Física",
+      "desc": "“Super Mario Odyssey” é um jogo de plataforma 3D da Nintendo, onde você controla Mario em uma aventura para salvar a Princesa Peach do vilão Bowser, que planeja se casar com ela. Mario é auxiliado por um chapéu mágico chamado Cappy, que lhe dá novos poderes. O jogo é conhecido por sua jogabilidade inovadora e mundos extensos e detalhados para explorar.",
+      "preco": 294.89
+    },
+    {
+      "id": "JG1",
+      "img": "/src/images/produtos/jogos/ea fc24-jog.png",
+      "nome": "EA FC24 | Mídia Física",
+      "desc": "EA SPORTS FC™ 24 é um jogo de futebol que inicia uma nova era do “Jogo de Todo Mundo”. Ele traz tecnologias como HyperMotionV, Estilos de Jogo otimizados pela Opta e uma Frostbite™ Engine revolucionada, oferecendo uma experiência de futebol autêntica e realista. O jogo inclui a experiência oficial da UEFA EURO 2024™ e apresenta modelos de atletas realistas e detalhes ricos para uma imersão completa em cada partida.",
+      "preco": 347.84
+    },
+    {
+      "id": "JG2",
+      "img": "/src/images/produtos/jogos/spider-jog.png",
+      "nome": "Marvel's Spider-Man 2 | Mídia Física",
+      "desc": "Marvel's Spider-Man 2 é um jogo eletrônico de ação-aventura que continua a história dos jogos anteriores. Peter Parker e Miles Morales, os Homens-Aranha, enfrentam o teste final de força enquanto lutam para salvar a cidade e aqueles que amam do monstruoso Venom e de uma nova ameaça do simbionte. O jogo também explora o retorno de Harry Osborn, recém curado de uma misteriosa doença, que parece estar relacionada ao simbionte Venom.",
+      "preco": 394.68
+    },
+    {
+      "id": "JG3",
+      "img": "/src/images/produtos/jogos/gow-jog.png",
+      "nome": "God of War: Ragnarok | Mídia Física",
+      "desc": "“God of War: Ragnarok” é a sequência do aclamado jogo God of War (2018). No jogo, Kratos e seu filho Atreus enfrentam o Fimbulwinter e devem viajar por cada um dos Nove Reinos em busca de respostas, enquanto as forças de Asgard se preparam para a batalha profética do Ragnarok, que promete ser o fim do mundo. Eles explorarão paisagens míticas e enfrentarão inimigos poderosos, incluindo deuses e monstros da mitologia nórdica.",
+      "preco": 339.99
+    },
+    {
+      "id": "JG4",
+      "img": "/src/images/produtos/jogos/red-jog.png",
+      "nome": "Red Dead Redemption 2 | Mídia Física",
+      "desc": "Red Dead Redemption 2 é um jogo de ação-aventura em mundo aberto, desenvolvido pela Rockstar Games. Ele se passa no final do século XIX e segue a história de Arthur Morgan, um fora da lei e membro da gangue Van der Linde. O jogo explora a vida tumultuada dos bandidos durante o declínio do Velho Oeste Americano, enquanto eles lidam com ameaças internas e externas em uma era de mudanças significativas. A narrativa é conhecida por sua profundidade, explorando temas como lealdade, sacrifício e a busca por redenção.",
+      "preco": 125.0
+    },
+    {
+      "id": "JG5",
+      "img": "/src/images/produtos/jogos/tlou-jog.png",
+      "nome": "The Last of Us | Mídia Física",
+      "desc": "The Last of Us é um jogo de ação-aventura e sobrevivência, desenvolvido pela Naughty Dog. A história se passa em um mundo pós-apocalíptico onde uma pandemia causada por um fungo transformou a maioria da população em criaturas hostis. O jogo segue Joel, um contrabandista endurecido, que é encarregado de escoltar a adolescente Ellie através dos Estados Unidos devastados. Juntos, eles enfrentam perigos constantes, incluindo infectados e outros sobreviventes hostis, enquanto desenvolvem um vínculo profundo e complexo.",
+      "preco": 203.99
+    },
+    {
+      "id": "JG6",
+      "img": "/src/images/produtos/jogos/elder-jog.png",
+      "nome": "Elden Ring | Mídia Física",
+      "desc": "Elden Ring é um jogo de RPG de ação que se passa nas Terras Intermédias, governadas pela Rainha Marika, a Eterna. A sinopse oficial revela que a Ordem Áurea foi quebrada e agora cabe ao jogador se tornar um Maculado, um guerreiro escolhido pela Graça para empunhar o poder do Anel Prístino. Com ele, você se torna um Lorde Prístino nas Terras Intermédias. Os semideuses filhos de Marika reivindicaram os fragmentos conhecidos como Grandes Runas, e essa incrível força recém-descoberta desencadeou uma guerra: a Ruptura. Agora o poder será dado aos Maculados, que foram rejeitados e exilados das Terras Intermédias.",
+      "preco": 289.0
+    },
+    {
+      "id": "JG7",
+      "img": "/src/images/produtos/jogos/zelda-jog.png",
+      "nome": "The Legend of Zelda: Tears of the Kingdom | Mídia Física",
+      "desc": "The Legend of Zelda™: Tears of the Kingdom é uma continuação direta de Breath of the Wild. Após a derrota de Calamity Ganon, Link e Zelda se aventuram dentro do castelo de Hyrule, onde encontram um corpo mumificado que parece ser de Ganondorf. Uma energia maligna desperta, causando o desaparecimento de Zelda, transformando seu castelo em ruínas flutuantes e ferindo gravemente o herói Link. O jogo é uma aventura épica onde o jogador deve navegar por este reino transformado e enfrentar o caos desencadeado pelo espírito maligno.",
+      "preco": 383.22
+    }
+  ],
+  "literatura": [
+    {
+      "id": "LT0",
+      "img": "/src/images/produtos/literatura/boxlivros-guerra-secretas.png",
+      "nome": "Box Marvel Guerra Civil: Guerras Secretas",
+      "desc": "Na 'Guerra Civil', Homem de Ferro e Capitão América, membros essenciais dos Vingadores, enfrentam um dilema quando uma batalha em Stamford causa centenas de mortes. O governo dos EUA exige que os super-heróis revelem suas identidades e registrem seus poderes. Tony Stark, o Homem de Ferro, apoia a lei, vendo-a como necessária, enquanto o Capitão América considera isso uma agressão à liberdade cívica. Em 'Guerras Secretas', heróis como Vingadores, X-Men, Quarteto Fantástico e Homem-Aranha enfrentam vilões como Magneto, Doutor Destino, Ultron e Galactus em um desafio interestelar organizado pelo onipotente Beyonder. No Mundo de Batalha, eles lutam pelo maior prêmio possível. Esta aventura épica e nostálgica é um marco na história dos super-heróis e na consolidação da cultura geek.",
+      "preco": 51.12
+    },
+    {
+      "id": "LT1",
+      "img": "/src/images/produtos/literatura/box-harry-lit.png",
+      "nome": "Box Harry Potter",
+      "desc": "A saga de livros de Harry Potter, escrita por J.K. Rowling, segue as aventuras de um jovem bruxo, Harry Potter, e seus amigos Hermione Granger e Ron Weasley, todos estudantes na Escola de Magia e Bruxaria de Hogwarts. A história principal gira em torno da luta de Harry contra o bruxo das trevas Lord Voldemort, que busca se tornar imortal, conquistar o mundo dos bruxos, subjugando ou eliminando todos os não-bruxos e destruir aqueles que estão em seu caminho, especialmente Harry Potter.",
+      "preco": 326.9
+    },
+    {
+      "id": "LT2",
+      "img": "/src/images/produtos/literatura/box-percy-lit.png",
+      "nome": "Box Percy Jackson e os Olimpianos",
+      "desc": "A saga de livros “Percy Jackson & os Olimpianos” é uma série de aventuras que segue Percy Jackson, um adolescente que descobre ser um semideus, filho de Poseidon. Ele e seus amigos embarcam em várias missões para salvar o mundo dos planos dos titãs e outros seres mitológicos. A série é conhecida por sua mistura de mitologia grega com a vida moderna.",
+      "preco": 280.0
+    },
+    {
+      "id": "LT3",
+      "img": "/src/images/produtos/literatura/box-jogos-lit.png",
+      "nome": "Box Jogos Vorazes",
+      "desc": "A saga “Jogos Vorazes” é uma trilogia distópica que se passa em Panem, uma nação dividida em 12 distritos e a Capital. A história segue Katniss Everdeen, uma jovem do Distrito 12 que se voluntaria para participar dos Jogos Vorazes no lugar de sua irmã mais nova. Os jogos são um evento anual televisado onde um menino e uma menina de cada distrito lutam até a morte. Katniss desafia o sistema e se torna um símbolo de rebelião contra a opressão da Capital. A trilogia explora temas de sobrevivência, autoritarismo, e resistência.",
+      "preco": 224.92
+    },
+    {
+      "id": "LT4",
+      "img": "/src/images/produtos/literatura/box-senhor-lit.png",
+      "nome": "Box Senhor dos Anéis",
+      "desc": "A saga “O Senhor dos Anéis” é uma trilogia épica de fantasia escrita por J.R.R. Tolkien que segue a jornada do hobbit Frodo Bolseiro para destruir o Anel do Poder, que foi forjado pelo Senhor do Escuro Sauron. Acompanhado por um grupo de heróis, incluindo humanos, um elfo, um anão e outros hobbits, Frodo enfrenta várias adversidades em sua missão para levar o anel até a Montanha da Perdição em Mordor, onde ele deve ser destruído.",
+      "preco": 293.12
+    },
+    {
+      "id": "LT5",
+      "img": "/src/images/produtos/literatura/box-game-lit.png",
+      "nome": "Box Game of Thrones",
+      "desc": "A saga “As Crônicas de Gelo e Fogo”, conhecida popularmente pelo título do primeiro livro e da série de TV, “Game of Thrones”, é uma série de fantasia épica escrita por George R.R. Martin. A história se passa nos continentes fictícios de Westeros e Essos e gira em torno das lutas pelo poder entre várias famílias nobres para conquistar o Trono de Ferro e governar os Sete Reinos de Westeros. Paralelamente, uma ameaça sobrenatural cresce no norte, além da Muralha. Os livros são conhecidos por sua complexidade política, vasto número de personagens, e a disposição do autor em matar personagens principais inesperadamente. A série ainda não está concluída.",
+      "preco": 169.0
+    },
+    {
+      "id": "LT6",
+      "img": "/src/images/produtos/literatura/o-batman-lit.png",
+      "nome": "O Batman que Ri",
+      "desc": "“O Batman que Ri” apresenta uma versão maligna e “Jokerizada” do Batman, originária do Multiverso Sombrio. Ele é um mestre criminoso que vem a Gotham para transformar a cidade em um incubatório do mal, combinando as características heroicas do Batman com a natureza assassina do Coringa.",
+      "preco": 69.9,
+      "desconto": 99.9
+    },
+    {
+      "id": "LT7",
+      "img": "/src/images/produtos/literatura/box-narnia-lit.png",
+      "nome": "Box As Crônicas de Nárnia",
+      "desc": "As “Crônicas de Nárnia” é uma série de sete livros de fantasia escritos por C.S. Lewis. A história gira em torno das aventuras de crianças humanas que descobrem Nárnia, um mundo mágico sob o domínio de Aslan, um leão sábio e poderoso, e seus conflitos contra as forças do mal. Nárnia é um lugar onde a magia é comum, animais falam e batalhas épicas são travadas entre o bem e o mal.",
+      "preco": 361.0
+    }
+  ],
+  "miniaturas": [
+    {
+      "id": "MN0",
+      "img": "/src/images/produtos/miniaturas/spiderpop.png",
+      "nome": "POP! SPIDER-MAN - LEAPING SPIDER-MAN #1157 - FUNKO",
+      "desc": "Incrível boneco Funko Pop! captura o Homem-Aranha em uma pose dinâmica de salto. Com sua roupa icônica e olhos expressivos, este colecionável é perfeito para fãs do super-herói e entusiastas da cultura pop. Características: Série: Homem-Aranha: Sem Volta para Casa, Material: Vinil resistente, Tamanho Aproximado: Cerca de 10 cm de altura, Embalagem: Caixa com janela para exibição. Se você é um colecionador ou simplesmente ama o Homem-Aranha, este Funko Pop! é uma adição imperdível à sua coleção.",
+      "preco": 139.9
+    },
+    {
+      "id": "MN1",
+      "img": "/src/images/produtos/miniaturas/LuffyGear5.png",
+      "nome": "Funko Pop! Animation: One Piece - Luffy Gear Five #1607",
+      "desc": "Incrível boneco Funko Pop! apresenta Luffy em sua forma épica conhecida como “Gear Five”. Com detalhes impressionantes e uma pose dinâmica, este colecionável é um tesouro para os fãs de “One Piece” e colecionadores. Características: Série: One Piece, Material: Vinil resistente, Tamanho Aproximado: Cerca de 10 cm de altura, Embalagem: Caixa com janela para exibição.",
+      "preco": 202.0
+    },
+    {
+      "id": "MN2",
+      "img": "/src/images/produtos/miniaturas/ddp.png",
+      "nome": "Funko! POP - Marvel - Deadpool - #546",
+      "desc": "Incrível boneco Funko Pop! apresenta o Deadpool em sua forma icônica. Com 9,5 cm de altura e feito de vinil resistente, ele é perfeito para colecionadores e fãs do universo Marvel. Características: Série: Marvel Edição Especial 80 Anos, Material: Vinil, Embalagem: Caixa com janela para exibição.",
+      "preco": 142.49
+    },
+    {
+      "id": "MN3",
+      "img": "/src/images/produtos/miniaturas/MilleniumFalcon.png",
+      "nome": "Miniatura de Metal Star Wars Millennium Falcon",
+      "desc": "Miniatura de montar é uma réplica perfeita da icônica Millennium Falcon da série de filmes Star Wars. Material: Feita em aço cortado e gravado a laser. Montagem: Vem em duas chapas finíssimas de aço, onde você destaca cada peça e segue o manual de instruções para montá-la. Sem Cola ou Adesivo: Você não precisa de cola ou adesivo para montá-la.",
+      "preco": 253.0
+    },
+    {
+      "id": "MN4",
+      "img": "/src/images/produtos/miniaturas/U-Wing Fighter.png",
+      "nome": "Miniatura Metal Earth - Star Wars U-Wing Fighter",
+      "desc": "Miniatura de montar é uma réplica perfeita da icônica U-Wing Fighter da série de filmes Star Wars. Material: Aço cortado e gravado a laser. Montagem: Vem em duas chapas finíssimas de aço, onde você destaca cada peça e segue o manual de instruções para montá-la. Perfeito para amantes de miniaturas, colecionáveis e fãs da franquia Star Wars.",
+      "preco": 227.98
+    },
+    {
+      "id": "MN5",
+      "img": "/src/images/produtos/miniaturas/Naruto.png",
+      "nome": "Action Figure Naruto Uzumaki Modo Sábio",
+      "desc": "Action figure do Naruto Uzumaki em seu modo sábio. Com detalhes impressionantes, ele está vestido com seu icônico manto vermelho e traje preto, pronto para a batalha. A figura fica sobre uma base de rocha, segurando um pergaminho, e cercado pelos Dois Grandes Sapos Eremitas. Detalhes: Altura: Aproximadamente 5,7 polegadas (cerca de 14,5 cm), Material: ABS, PVC e tecido, Inclui várias mãos intercambiáveis e expressões faciais.",
+      "preco": 162.83
+    },
+    {
+      "id": "MN6",
+      "img": "/src/images/produtos/miniaturas/batmão.png",
+      "nome": "Action Figure Batman Injustice - DC McFarlane",
+      "desc": "A Action Figure Batman Injustice é produzido pela DC McFarlane e oferece detalhes incríveis para os fãs do Homem-Morcego. Tamanho: Com 7 polegadas (aproximadamente 18 cm), a figura é perfeita para exibição ou brincadeiras. Detalhes Articulados: O boneco possui até 22 partes móveis, permitindo uma ampla variedade de poses e cenas de ação. Design Baseado na Série Injustice.",
+      "preco": 198.69
+    },
+    {
+      "id": "MN7",
+      "img": "/src/images/produtos/miniaturas/gojo.png",
+      "nome": "Action Figure Jujutsu Kaisen - SATORU GOJO",
+      "desc": "Essa Action Figure é baseada no Satoro Gojo do anime Jujutsu Kaisen. Tamanho: Com 17 cm de altura, essa peça estática é feita de plástico de alta qualidade. Detalhes Incríveis: O nível de detalhe captura a essência do personagem, incluindo suas características marcantes, como o cabelo branco e os olhos vendados. Pose Característica: Satoru Gojo é representado com uma das mãos perto do rosto, como se estivesse ajustando óculos ou uma máscara. Acessórios: Embora a figura seja estática, ela pode ser exibida em sua base branca, adicionando um toque especial à sua coleção.",
+      "preco": 312.0
+    }
+  ],
+  "roupas": [
+    {
+      "id": "RP0",
+      "img": "/src/images/produtos/roupas/naruto-roup.png",
+      "nome": "Camisa Estilizada | Naruto",
+      "desc": "Design Inspirado em Naruto: Esta camisa apresenta um design inspirado no popular anime e mangá 'Naruto'. A base da camisa é de cor laranja vibrante, com padrões de chamas pretas subindo da bainha inferior em direção à parte central em ambos os lados. No peito esquerdo, há um logotipo circular ou emblema, e logo abaixo dele, na parte inferior da camisa, parece haver um símbolo estilizado ou personagem que se assemelha a um redemoinho. Estilo Único e Ousado: A combinação de cores e os elementos do design tornam essa camisa uma escolha ousada para os fãs de 'Naruto' ou para quem gosta de moda com padrões marcantes.",
+      "preco": 120.28
+    },
+    {
+      "id": "RP1",
+      "img": "/src/images/produtos/roupas/goku-roup.png",
+      "nome": "Moletom Estilizado | Goku",
+      "desc": "Design Inspirado em 'Dragon Ball Z': Esta jaqueta de moletom apresenta um design inspirado no popular anime 'Dragon Ball Z'. A parte de trás exibe um grande círculo laranja com um personagem estilizado em preto e branco dentro dele. Detalhes do Tecido e Fechamento: O tecido é moletom flanelado 100% algodão. O fechamento é feito somente por zíper. Tamanhos Disponíveis: A jaqueta está disponível em vários tamanhos, desde 12 (para crianças pequenas) até GG (para adultos mais robustos).",
+      "preco": 139.99
+    },
+    {
+      "id": "RP2",
+      "img": "/src/images/produtos/roupas/avengers-roup.png",
+      "nome": "Conjunto Moletom Estilizado | Avengers",
+      "desc": "Material: Algodão e Poliéster. Cores disponíveis: Preto com detalhes coloridos. Tamanhos: P, M, G, GG. Características adicionais: Capuz ajustável, bolsos laterais na calça, cordão de ajuste na cintura.",
+      "preco": 149.9
+    },
+    {
+      "id": "RP3",
+      "img": "/src/images/produtos/roupas/demon-brin-roup.png",
+      "nome": "Brinco Estilizado | Demon Slayer",
+      "desc": "Adicione um toque de elegância e ousadia ao seu visual com o Brinco Estilizado inspirado em Demon Slayer. Este acessório exclusivo é perfeito para os fãs do famoso anime que desejam expressar sua paixão de maneira sofisticada. Os brincos apresentam um design único, inspirado nas marcas e símbolos icônicos dos personagens, especialmente os brincos de Hanafuda usados por Tanjiro Kamado. Material: Liga metálica hipoalergênica. Cores disponíveis: Preto, branco e detalhes vermelhos. Tamanho: Aproximadamente 3 cm de comprimento. Características adicionais: Fecho seguro, design leve e confortável, ideal para uso prolongado.",
+      "preco": 12.74
+    },
+    {
+      "id": "RP4",
+      "img": "/src/images/produtos/roupas/harry-roup.png",
+      "nome": "Moletom Estilizado | Harry Potter",
+      "desc": "Envolva-se na magia do mundo bruxo com o Moletom Estilizado inspirado em Harry Potter. Este moletom é a escolha perfeita para fãs que desejam levar a magia de Hogwarts para o seu dia a dia. Com um design sofisticado e referências sutis à série, este moletom oferece conforto e estilo em uma peça única. Material: Algodão premium com forro felpado. Cores disponíveis: Preto, cinza e azul marinho. Tamanhos: P, M, G, GG. Características adicionais: Capuz ajustável com cordão, bolso canguru, punhos e barra canelados, estampa de alta qualidade que não desbota.",
+      "preco": 69.43
+    },
+    {
+      "id": "RP5",
+      "img": "/src/images/produtos/roupas/demon-roup.png",
+      "nome": "Camisa Estilizada | Demon Slayer",
+      "desc": "Aventure-se no mundo de Demon Slayer com a nossa Camisa Estilizada, perfeita para fãs que desejam expressar seu amor pela série com estilo e sofisticação. Esta camisa combina elementos icônicos do anime com um design moderno e elegante, tornando-se uma peça indispensável no guarda-roupa de qualquer entusiasta. Material: Poliéster premium com toque macio. Cores disponíveis: Preto, branco e cinza. Tamanhos: P, M, G, GG. Características adicionais: Gola redonda, mangas curtas, estampa de alta definição resistente a lavagens.",
+      "preco": 69.99
+    },
+    {
+      "id": "RP6",
+      "img": "/src/images/produtos/roupas/dc-roup.png",
+      "nome": "Camisa Estilizada | Batman VS Superman",
+      "desc": "A arte da camisa destaca os dois heróis em uma pose épica, prontos para o combate, com o emblemático símbolo de cada um em destaque. Detalhes intricados e cores vibrantes trazem à vida a intensidade do confronto, fazendo você se sentir parte deste universo lendário. Material: Algodão premium, proporcionando suavidade e respirabilidade. Cores disponíveis: Preto, cinza e azul marinho. Tamanhos: P, M, G, GG. Características adicionais: Gola redonda reforçada, mangas curtas, estampa de alta definição resistente a lavagens.",
+      "preco": 54.9
+    },
+    {
+      "id": "RP7",
+      "img": "/src/images/produtos/roupas/anel-roup.png",
+      "nome": "Colar/Anel | Senhor dos Anéis",
+      "desc": "Adentre o mundo encantado da Terra Média com o nosso deslumbrante Colar/Anel | Senhor dos Anéis. Esta joia exclusiva é inspirada no lendário Um Anel, símbolo central da aclamada trilogia de J.R.R. Tolkien, 'O Senhor dos Anéis'. Ideal para fãs dedicados e colecionadores, este item combina elegância e misticismo, tornando-se uma peça indispensável para qualquer entusiasta da saga. Material do Colar: Corrente em aço inoxidável de alta qualidade, resistente à oxidação e ao desgaste. Material do Anel: Liga de zinco banhada a ouro, garantindo durabilidade e um brilho incomparável. Tamanhos disponíveis: Corrente de 60 cm; Anel em tamanhos ajustáveis.",
+      "preco": 27.49
+    }
+  ],
+  "tabuleiro": [
+    {
+      "id": "TB0",
+      "img": "/src/images/produtos/tabuleiro/D&DI.png",
+      "nome": "D&D Kit Introdutório Dragões Da Ilha Da Tempestade",
+      "desc": "Explore o mundo de Dungeons & Dragons com o Kit Introdutório: Dragões da Ilha da Tempestade. Ideal para aventuras épicas, este kit inclui regras essenciais e tudo que você precisa para jogar com heróis em meio a uma guerra antiga entre dragões.",
+      "preco": 184.45
+    },
+    {
+      "id": "TB1",
+      "img": "/src/images/produtos/tabuleiro/D&DE.png",
+      "nome": "D&D - Essentials Kit",
+      "desc": "O D&D Essentials Kit é a maneira perfeita de iniciar no maior RPG do mundo, projetado para 2 a 6 jogadores. Inclui um livro de regras, aventura 'Dragon of Icespire Peak' e muito mais para uma experiência completa de jogo.",
+      "preco": 175.22
+    },
+    {
+      "id": "TB2",
+      "img": "/src/images/produtos/tabuleiro/DI&DE.png",
+      "nome": "Kit D&D Introdutório E Essencial",
+      "desc": "Tudo que você precisa para começar a jogar o maior RPG de todos os tempos. Este kit combina o Kit Introdutório e o Kit Essencial, com aventuras, regras e materiais para jogadores de todos os níveis.",
+      "preco": 319.13
+    },
+    {
+      "id": "TB3",
+      "img": "/src/images/produtos/tabuleiro/R&M.png",
+      "nome": "Dungeons & Dragons Vs Rick and Morty",
+      "desc": "Jogue D&D através das lentes do gênio narcisista louco, Rick Sanchez, nesta caixa que combina o mundo de Dungeons & Dragons com a série animada. Inclui livro de regras, aventura original e fichas de personagem.",
+      "preco": 332.26
+    }
+  ]
+}
