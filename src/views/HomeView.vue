@@ -6,10 +6,12 @@
         <b-form-input placeholder="Buscar..." id="barraDePesquisa"></b-form-input>
         <div class="login">
             <div v-if="usuarioAtivo == true" class="loginInterno">
-              <img src="../images/do-utilizador.png" alt="Login" style="width: 50px;"/>
-              <p style="color: white; margin: auto 0.9vw">{{nomeExibicao}}</p>
+              <img style="margin: auto auto auto 0.9vw; width: 50px;" src="../images/do-utilizador.png" alt="Login"/>
+              <div class="userName">
+                <p style="color: white; font-weight: 600; margin: auto 0.9vw;">{{nomeExibicao}}</p>
+              </div>
             </div>
-            <router-link v-else to="/about" class="loginInterno">
+            <router-link v-else to="/about" class="loginInterno LoginInterno2">
               <img style="margin: auto auto auto 0.9vw; width: 50px;" src="../images/do-utilizador.png" alt="Login"/>
               <p style="color: white; font-weight: 600; margin: auto 0.9vw">Login | Cadastro</p>
             </router-link>
@@ -65,18 +67,37 @@
   }
 
   .loginInterno{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
     background-color: #23154b;
     text-decoration: none;
     padding: 1vh;
-    width: 18vw;
     border-radius: 16px;
+    width: 16vw;
+  }
+
+  .userName{
+    width: 11vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .userName > p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .LoginInterno2{
+    width: 15vw;
   }
 
   .dest{
-    padding: 20vh 0;
+    padding: 10vh 0;
     background-color: #FCFAFA;
   }
 
@@ -108,8 +129,8 @@ export default {
     return{
       dest1,
       dest2,
-      nomeExibicao: '',
-      usuarioAtivo: false,
+      nomeExibicao: 'Kyu Hayato',
+      usuarioAtivo: true,
     }
   }
 };
