@@ -2,21 +2,26 @@
   <body>
     <header>
       <div class="interiorHeader">
-        <router-link to="/"><img src="../images/Logo (Sem Fundo).png" alt="logo da startup" style="width: 100px; height: auto; filter: drop-shadow(5px 5px 5px black);"></router-link>
-        <b-form-input placeholder="Buscar..." id="barraDePesquisa"></b-form-input>
+        <router-link to="/"><img src="/images/Logo (Sem Fundo).png" alt="logo da startup" style="width: 100px; height: auto; filter: drop-shadow(5px 5px 5px black);"></router-link>
+        <b-input-group size="lg" class="mb-0">
+          <b-input-group-prepend is-text>
+            <b-icon icon="search"></b-icon>
+          </b-input-group-prepend>
+          <b-form-input type="search" placeholder="Search terms"></b-form-input>
+        </b-input-group>
         <div class="login">
             <div v-if="usuarioAtivo == true" class="loginInterno">
-              <img style="margin: auto auto auto 0.9vw; width: 50px;" src="../images/do-utilizador.png" alt="Login"/>
+              <img style="margin: auto auto auto 0.9vw; width: 50px;" src="/images/do-utilizador.png" alt="Login"/>
               <div class="userName">
                 <p style="color: white; font-weight: 600; margin: auto 0.9vw;">{{nomeExibicao}}</p>
               </div>
             </div>
             <router-link v-else to="/about" class="loginInterno LoginInterno2">
-              <img style="margin: auto auto auto 0.9vw; width: 50px;" src="../images/do-utilizador.png" alt="Login"/>
+              <img style="margin: auto auto auto 0.9vw; width: 50px;" src="/images/do-utilizador.png" alt="Login"/>
               <p style="color: white; font-weight: 600; margin: auto 0.9vw">Login | Cadastro</p>
             </router-link>
         </div>
-        <img src="../images/carrinho-de-compras.png" alt="" style="width: 50px;">
+        <img src="/images/carrinho-de-compras.png" alt="" style="width: 50px;">
       </div>
     </header>
     <nav>
@@ -36,8 +41,8 @@
               img-width="1024"
               img-height="480"
             >
-              <b-carousel-slide :img-src="dest1"></b-carousel-slide>
-              <b-carousel-slide :img-src="dest2"></b-carousel-slide>
+              <b-carousel-slide img-src="/images/destaques-p/deadpool.jpg"></b-carousel-slide>
+              <b-carousel-slide img-src="/images/destaques-p/ea-fc.jpg"></b-carousel-slide>
             </b-carousel>
           </div>
         </div>
@@ -50,30 +55,30 @@
       <section>
         <h1 style="text-align: center;">Produtos com Desconto</h1>
         <br>
-        
+        <CarrosselDivs></CarrosselDivs>
       </section>
     </main>
     <footer>
       <!-- Pagamentos -->
       <h4>Formas de Pagamento</h4>
       <div class="imgF">
-        <img src="../images/footer/visa.png" alt="Visa" class="if" />
-        <img src="../images/footer/mastercard_vrt_pos_92px_2x.png" alt="Mastercard" class="if" />
-        <img src="../images/footer/Banco_Itaú_logo.svg.png" alt="Itaú" class="if" />
-        <img src="../images/footer/logo-pix-520x520.png" alt="Pix" class="if" />
+        <img src="/images/footer/visa.png" alt="Visa" class="if" />
+        <img src="/images/footer/mastercard_vrt_pos_92px_2x.png" alt="Mastercard" class="if" />
+        <img src="/images/footer/Banco_Itaú_logo.svg.png" alt="Itaú" class="if" />
+        <img src="/images/footer/logo-pix-520x520.png" alt="Pix" class="if" />
       </div>
       <!-- Redes Sociais -->
       <h4>Redes Sociais</h4>
       <div class="imgF">
-        <a href=""><img src="../images/footer/face.png" alt="Twitter" class="if" /></a>
+        <a href=""><img src="/images/footer/face.png" alt="Twitter" class="if" /></a>
         <a href="https://www.instagram.com/escuderia.nexus?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw== "><img
-            src="../images/footer/Instagram_icon.webp" alt="Instagram" class="if" /></a>
+            src="/images/footer/Instagram_icon.webp" alt="Instagram" class="if" /></a>
       </div>
       <!-- Atendimento -->
       <h4>Atendimento</h4>
       <div class="imgF">
-        <a href=""><img src="../images/footer/whatsapp.png" alt="(81) 90000-0000" class="if" /></a>
-        <a href=""><img src="../images/footer/gmail.png" alt="Nexus69@gmail.com" class="if" /></a>
+        <a href=""><img src="/images/footer/whatsapp.png" alt="(81) 90000-0000" class="if" /></a>
+        <a href=""><img src="/images/footer/gmail.png" alt="Nexus69@gmail.com" class="if" /></a>
       </div>
       <br />
       <p style="font-size: 115%">
@@ -95,8 +100,6 @@
 <script>
 // @ is an alias to /src
 import CarrosselDivs from '@/components/CarrosselDivs.vue';
-import dest1 from '@/images/destaques-p/deadpool.jpg';
-import dest2 from '@/images/destaques-p/ea-fc.jpg';
 export default {
   name: "HomeView",
   components:{
@@ -104,24 +107,17 @@ export default {
   },
   data(){
     return{
-      dest1,
-      dest2,
       nomeExibicao: 'Kyu Hayato',
       usuarioAtivo: true
     }
   }
 };
-
 </script>
+
 <style>
   header{
     background-color: #190C3C;
     padding: 3.5vh;
-  }
-
-  #barraDePesquisa{
-    width: 45vw;
-    margin: 0;
   }
 
   .interiorHeader{
