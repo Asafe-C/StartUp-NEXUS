@@ -3,11 +3,11 @@
     <header>
       <div class="interiorHeader">
         <router-link to="/"><img src="/images/Logo (Sem Fundo).png" alt="logo da startup" style="width: 100px; height: auto; filter: drop-shadow(5px 5px 5px black);"></router-link>
-        <b-input-group size="lg" class="mb-0">
+        <b-input-group size="lg" class="mb-0" style="width: 50vw;">
           <b-input-group-prepend is-text>
             <b-icon icon="search"></b-icon>
           </b-input-group-prepend>
-          <b-form-input type="search" placeholder="Search terms"></b-form-input>
+          <b-form-input type="search" placeholder="Pesquisar produtos"></b-form-input>
         </b-input-group>
         <div class="login">
             <div v-if="usuarioAtivo == true" class="loginInterno">
@@ -16,16 +16,18 @@
                 <p style="color: white; font-weight: 600; margin: auto 0.9vw;">{{nomeExibicao}}</p>
               </div>
             </div>
-            <router-link v-else to="/about" class="loginInterno LoginInterno2">
+            <div v-else class="loginInterno LoginInterno2">
               <img style="margin: auto auto auto 0.9vw; width: 50px;" src="/images/do-utilizador.png" alt="Login"/>
-              <p style="color: white; font-weight: 600; margin: auto 0.9vw">Login | Cadastro</p>
-            </router-link>
+              <p style="color: white; font-weight: 600; margin: auto 0.9vw;">
+                <router-link to="/login" class="loginCadastro">Login</router-link> | <router-link to="/cadastro" class="loginCadastro">Cadastre-se</router-link>
+              </p>
+            </div>
         </div>
         <img src="/images/carrinho-de-compras.png" alt="" style="width: 50px;">
       </div>
     </header>
     <nav>
-        <router-link to="/about">About</router-link>
+        <router-link to="/cadastro">About</router-link>
     </nav>
     <main>
       <section class="dest">
@@ -107,8 +109,8 @@ export default {
   },
   data(){
     return{
-      nomeExibicao: 'Kyu Hayato',
-      usuarioAtivo: true
+      nomeExibicao: 'Mariano Machado',
+      usuarioAtivo: false
     }
   }
 };
@@ -137,7 +139,7 @@ export default {
   }
 
   .userName{
-    width: 11vw;
+    width: 15vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,7 +155,17 @@ export default {
   }
 
   .LoginInterno2{
-    width: 15vw;
+    width: 18vw;
+  }
+
+  .loginCadastro{
+    text-decoration: none;
+    color: #fff
+  }
+
+  .loginCadastro:hover{
+    text-decoration: none;
+    color: #e6e6e6
   }
 
   .dest{

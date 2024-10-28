@@ -1,0 +1,112 @@
+<template>
+    <body>
+        <main> <!--Conteúdo-->
+            <div class="ladoEsquerdo"> <!--Fundo-->
+                <img src="" alt="">
+            </div>
+            <div class="ladoDireito"> <!--Parte com o Login-->
+                <div class="login">
+                    <div class="iconeLogin"> <!--Ícone e Texto-->
+                        <img src="/images/login/user2.png" alt="Ícone de Usuário">
+                        <h2>Faça seu Login</h2>
+                    </div>
+                    <div>
+                        <b-form @submit="onSubmit">
+                            <b-input-group class="mb-2">
+                                <b-input-group-prepend is-text>
+                                    <b-icon icon="person-fill"></b-icon>
+                                </b-input-group-prepend>
+                                <b-form-input type="text" placeholder="E-MAIL" style="text-align: center;" v-model="form.email"></b-form-input>
+                            </b-input-group>
+                            <b-input-group class="mb-2">
+                                <b-input-group-prepend is-text>
+                                    <b-icon icon="lock-fill"></b-icon>
+                                </b-input-group-prepend>
+                                <b-form-input type="password" placeholder="SENHA" style="text-align: center;" v-model="form.senha"></b-form-input>
+                            </b-input-group>
+                            <b-button type="submit" style="background-color: #220a60; padding: 2vh 4vw;">Submit</b-button>
+                        </b-form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</template>
+
+<script>
+    export default {
+    data() {
+      return {
+        form: {
+          email: '',
+          senha: '',
+        }
+      }
+    },
+    methods: {
+      onSubmit() {
+        event.preventDefault()
+        alert(JSON.stringify(this.form))
+      }
+    }
+  }
+</script>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #fcfafa;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+
+.ladoEsquerdo {
+    background: url('/public/images/login/Fundo\ \(Login\).jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.ladoDireito {
+    flex: 1.25;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.iconeLogin img{
+    width: 150px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #220a60;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1D0D46;
+}
+</style>
