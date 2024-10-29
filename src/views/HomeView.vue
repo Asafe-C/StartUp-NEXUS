@@ -27,7 +27,26 @@
       </div>
     </header>
     <nav>
-        <router-link to="/cadastro">About</router-link>
+      <b-row style="height: 100%; justify-content: center; align-items: center;">
+          <b-col style="padding: 0">
+            <b-dropdown id="categoria" text="Categorias" class="w-100" no-caret>
+              <b-dropdown-item @click="selectOption('Teste')">Colecionáveis</b-dropdown-item>
+              <b-dropdown-item @click="selectOption('')">Cosplays</b-dropdown-item>
+              <b-dropdown-item @click="selectOption('')">Decoração</b-dropdown-item>
+              <b-dropdown-item @click="selectOption('')">Jogos</b-dropdown-item>
+              <b-dropdown-item @click="selectOption('')">Literatura</b-dropdown-item>
+              <b-dropdown-item @click="selectOption('')">Miniaturas</b-dropdown-item>
+              <b-dropdown-item @click="selectOption('')">Roupas</b-dropdown-item>
+              <b-dropdown-item @click="selectOption('')">Tabuleiro</b-dropdown-item>
+            </b-dropdown>
+          </b-col>
+          <b-col style="padding: 0">
+            <router-link to="/">Favoritos</router-link>
+          </b-col>
+          <b-col style="padding: 0">
+            <router-link to="/">Promoções</router-link>
+          </b-col>
+        </b-row>
     </nav>
     <main>
       <section class="dest">
@@ -37,14 +56,17 @@
             <br>
             <b-carousel
               id="destaquesCarrossel"
-              fade
               :interval="3500"
               indicators
               img-width="1024"
               img-height="480"
             >
-              <b-carousel-slide img-src="/images/destaques-p/deadpool.jpg"></b-carousel-slide>
-              <b-carousel-slide img-src="/images/destaques-p/ea-fc.jpg"></b-carousel-slide>
+              <b-carousel-slide img-src="/images/destaques-p/deadpool.png"></b-carousel-slide>
+              <b-carousel-slide img-src="/images/destaques-p/ea-fc.png"></b-carousel-slide>
+              <b-carousel-slide img-src="/images/destaques-p/harry-book.png"></b-carousel-slide>
+              <b-carousel-slide img-src="/images/destaques-p/manto.png"></b-carousel-slide>
+              <b-carousel-slide img-src="/images/destaques-p/mario.png"></b-carousel-slide>
+              <b-carousel-slide img-src="/images/destaques-p/rpg.png"></b-carousel-slide>
             </b-carousel>
           </div>
         </div>
@@ -110,7 +132,13 @@ export default {
   data(){
     return{
       nomeExibicao: 'Mariano Machado',
-      usuarioAtivo: false
+      usuarioAtivo: false,
+    }
+  },
+  methods: {
+    selectOption(option) {
+      this.selectedOption = option; // Atualiza a variável com a opção escolhida
+      this.$router.push({ name: 'produtos'}); // Redireciona para a mesma página
     }
   }
 };
@@ -166,6 +194,29 @@ export default {
   .loginCadastro:hover{
     text-decoration: none;
     color: #e6e6e6
+  }
+
+  button#categoria__BV_toggle_{
+    background-color: transparent;
+    padding: 2vh;
+    font-weight: 600;
+    border: none;
+  }
+
+  .dropdown-menu.show {
+    width: 100%;
+    background-color: #231350;
+    text-align: center;
+    padding: 0;
+    margin: 0.8vh -1.4vw;
+  }
+
+  a.dropdown-item {
+    color: #e6e6e6;
+  }
+  a.dropdown-item:hover {
+    color: #e6e6e6;
+    background-color: #3b2577;
   }
 
   .dest{

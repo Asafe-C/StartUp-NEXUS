@@ -14,19 +14,21 @@
 
 nav {
   background-color: #20104b;
-  padding: 30px;
+  height: 10vh;
+  text-align: center;
 }
 
 nav a {
   font-weight: 600;
   color: #e7e7e7;
-  text-decoration: none
+  text-decoration: none;
 }
 nav a:hover {
   color: #dbdbdb;
+  text-decoration: none;
 }
 
-nav a.router-link-exact-active {
+/* nav a.router-link-exact-active {
   color: #dbdbdb;
-}
+} */
 </style>

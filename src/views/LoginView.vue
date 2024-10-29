@@ -13,18 +13,18 @@
                     <div>
                         <b-form @submit="onSubmit">
                             <b-input-group class="mb-2">
-                                <b-form-input type="text" placeholder="E-MAIL" style="text-align: center;" v-model="form.email" :state="stateEmail" trim></b-form-input>
                                 <b-input-group-prepend is-text>
                                     <b-icon icon="person-fill"></b-icon>
                                 </b-input-group-prepend>
+                                <b-form-input type="text" placeholder="E-MAIL" style="text-align: center;" v-model="form.email" :state="stateEmail" trim required></b-form-input>
                             </b-input-group>
                             <b-input-group class="mb-2">
-                                <b-form-input type="password" placeholder="SENHA" style="text-align: center;" v-model="form.senha" :state="stateSenha" trim></b-form-input>
                                 <b-input-group-prepend is-text>
                                     <b-icon icon="lock-fill"></b-icon>
                                 </b-input-group-prepend>
+                                <b-form-input type="password" placeholder="SENHA" style="text-align: center;" v-model="form.senha" :state="stateSenha" trim required></b-form-input>
                             </b-input-group>
-                            <b-button type="submit" style="background-color: #220a60; padding: 2vh 4vw;">Submit</b-button>
+                            <b-button type="submit" style="padding: 2vh 4vw;" oncursor>Submit</b-button>
                         </b-form>
                     </div>
                 </div>
@@ -70,10 +70,6 @@
     }
 </script>
 
-<style lang="sass">
-
-</style>
-
 <style>
     body {
     font-family: Arial, sans-serif;
@@ -96,7 +92,6 @@ main {
 }
 
 .ladoDireito {
-    flex: 1.25;
     background-color: whitesmoke;
     display: flex;
     justify-content: center;
@@ -104,8 +99,7 @@ main {
 }
 
 .login {
-    width: 100%;
-    max-width: 300px;
+    width: 60%;
     text-align: center;
 }
 
@@ -117,18 +111,17 @@ h2 {
     margin-bottom: 20px;
 }
 
-button {
+button.btn.btn-secondary{
     width: 100%;
-    padding: 10px;
-    background-color: #220a60;
     border: none;
     border-radius: 5px;
     color: #fff;
+    background-color: #220a60;
     font-size: 16px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #1D0D46;
+button.btn.btn-secondary:hover{
+    background-color: #1a0747;
 }
 </style>

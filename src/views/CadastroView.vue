@@ -15,6 +15,7 @@
                   type="text"
                   placeholder="Digite seu primeiro nome"
                   required
+                  trim
                 ></b-form-input>
               </b-form-group>
             </b-col>
@@ -27,6 +28,7 @@
                   type="text"
                   placeholder="Digite seu sobrenome"
                   required
+                  trim
                 ></b-form-input>
               </b-form-group>
             </b-col>
@@ -41,6 +43,7 @@
                   type="text"
                   placeholder="Digite seu primeiro CPF"
                   required
+                  trim
                 ></b-form-input>
               </b-form-group>
             </b-col>
@@ -52,6 +55,7 @@
                   v-model="form.nascUser"
                   type="date"
                   required
+                  trim
                 ></b-form-input>
               </b-form-group>
             </b-col>
@@ -66,6 +70,7 @@
                   type="text"
                   placeholder="Digite seu CEP"
                   required
+                  trim
                 ></b-form-input>
               </b-form-group>
             </b-col>
@@ -77,6 +82,7 @@
                   v-model="form.telUser"
                   placeholder="Digite aqui seu número de telefone"
                   type="text"
+                  trim
                 ></b-form-input>
               </b-form-group>
             </b-col>
@@ -91,6 +97,7 @@
                   type="email"
                   placeholder="Digite seu email"
                   required
+                  trim
                 ></b-form-input>
               </b-form-group>
             </b-col>
@@ -103,6 +110,7 @@
                   type="password"
                   placeholder="Digite sua senha"
                   required
+                  trim
                 ></b-form-input>
               </b-form-group>
             </b-col>
@@ -114,7 +122,7 @@
           </small>
         </div>
         <div class="mt-3" style="display: flex; justify-content: center">
-          <b-button type="submit" style="background-color: #220a60; padding: 2vh 4vw;">Criar Conta</b-button>
+          <b-button type="submit" style="padding: 2vh 4vw;">Criar Conta</b-button>
         </div>
       </b-form>
     </main>
@@ -187,6 +195,14 @@
     text-decoration: none;
     color: #220a60;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  button.btn.btn-secondary{
+    background-color: #220a60;
+  }
+
+  button.btn.btn-secondary:hover{
+    background-color: #1a0747;
   }
 
   footer{
