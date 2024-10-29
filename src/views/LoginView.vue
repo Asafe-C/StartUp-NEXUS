@@ -13,16 +13,16 @@
                     <div>
                         <b-form @submit="onSubmit">
                             <b-input-group class="mb-2">
+                                <b-form-input type="text" placeholder="E-MAIL" style="text-align: center;" v-model="form.email" :state="stateEmail" trim></b-form-input>
                                 <b-input-group-prepend is-text>
                                     <b-icon icon="person-fill"></b-icon>
                                 </b-input-group-prepend>
-                                <b-form-input type="text" placeholder="E-MAIL" style="text-align: center;" v-model="form.email"></b-form-input>
                             </b-input-group>
                             <b-input-group class="mb-2">
+                                <b-form-input type="password" placeholder="SENHA" style="text-align: center;" v-model="form.senha" :state="stateSenha" trim></b-form-input>
                                 <b-input-group-prepend is-text>
                                     <b-icon icon="lock-fill"></b-icon>
                                 </b-input-group-prepend>
-                                <b-form-input type="password" placeholder="SENHA" style="text-align: center;" v-model="form.senha"></b-form-input>
                             </b-input-group>
                             <b-button type="submit" style="background-color: #220a60; padding: 2vh 4vw;">Submit</b-button>
                         </b-form>
@@ -36,21 +36,43 @@
 <script>
     export default {
     data() {
-      return {
-        form: {
-          email: '',
-          senha: '',
+        return {
+            form: {
+            email: '',
+            senha: '',
+            }
         }
-      }
+        },
+        methods: {
+        onSubmit() {
+            event.preventDefault()
+            alert(JSON.stringify(this.form))
+        },
+        validateState(ref) {
+        if (
+            this.veeFields[ref] &&
+            (this.veeFields[ref].dirty || this.veeFields[ref].validated)
+        ) {
+            return !this.veeErrors.has(ref);
+        }
+        return null;
+        }   
     },
-    methods: {
-      onSubmit() {
-        event.preventDefault()
-        alert(JSON.stringify(this.form))
-      }
+    computed: {
+            stateEmail() {
+                const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return this.form.email.length > 0 && regexEmail.test(this.form.email)
+            },
+            stateSenha() {
+                return this.form.senha.length >= 6
+            },
+        }
     }
-  }
 </script>
+
+<style lang="sass">
+
+</style>
 
 <style>
     body {
