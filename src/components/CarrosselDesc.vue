@@ -25,7 +25,7 @@
   export default {
     data() {
       return {
-        cards: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        cards: [4, 5, 6], //colocar array do webstorage
         innerStyles: {
           transform: "translateX(0px)",
           transition: "transform 0.01s ease",

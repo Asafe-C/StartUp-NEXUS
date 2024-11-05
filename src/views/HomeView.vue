@@ -27,24 +27,15 @@
       </div>
     </header>
     <nav>
-      <b-row style="height: 100%; justify-content: center; align-items: center;">
+      <b-row style="height: 100%; justify-content: center; align-items: center; width: 100%;">
           <b-col style="padding: 0">
-            <b-dropdown id="categoria" text="Categorias" class="w-100" no-caret>
-              <b-dropdown-item @click="selectOption('Teste')">Colecionáveis</b-dropdown-item>
-              <b-dropdown-item @click="selectOption('')">Cosplays</b-dropdown-item>
-              <b-dropdown-item @click="selectOption('')">Decoração</b-dropdown-item>
-              <b-dropdown-item @click="selectOption('')">Jogos</b-dropdown-item>
-              <b-dropdown-item @click="selectOption('')">Literatura</b-dropdown-item>
-              <b-dropdown-item @click="selectOption('')">Miniaturas</b-dropdown-item>
-              <b-dropdown-item @click="selectOption('')">Roupas</b-dropdown-item>
-              <b-dropdown-item @click="selectOption('')">Tabuleiro</b-dropdown-item>
-            </b-dropdown>
+            <router-link to="/produtos">Produtos</router-link>
           </b-col>
           <b-col style="padding: 0">
             <router-link to="/">Favoritos</router-link>
           </b-col>
-          <b-col style="padding: 0">
-            <router-link to="/">Promoções</router-link>
+          <b-col style="padding: 0;">
+            <router-link to="/promocoes">Promoções</router-link>
           </b-col>
         </b-row>
     </nav>
@@ -74,12 +65,12 @@
       <section>
         <h1 style="text-align: center;">Recomendados</h1>
         <br>
-        <CarrosselDivs></CarrosselDivs>
+        <CarrosselRec></CarrosselRec>
       </section>
       <section>
         <h1 style="text-align: center;">Produtos com Desconto</h1>
         <br>
-        <CarrosselDivs></CarrosselDivs>
+        <CarrosselDesc></CarrosselDesc>
       </section>
     </main>
     <footer>
@@ -123,11 +114,13 @@
 
 <script>
 // @ is an alias to /src
-import CarrosselDivs from '@/components/CarrosselDivs.vue';
+import CarrosselDesc from '@/components/CarrosselDesc.vue';
+import CarrosselRec from '@/components/CarrosselRec.vue';
 export default {
   name: "HomeView",
   components:{
-    CarrosselDivs,
+    CarrosselDesc,
+    CarrosselRec,
   },
   data(){
     return{

@@ -62,32 +62,7 @@
         "
       >
         <b-col style="padding: 0">
-          <b-dropdown id="categoria" text="Categorias" class="w-100" no-caret>
-            <b-dropdown-item @click="selectOption('COLECIONÁVEIS')"
-              >Colecionáveis</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('COSPLAYS')"
-              >Cosplays</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('DECORAÇÕES')"
-              >Decorações</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('JOGOS')"
-              >Jogos</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('LITERATURA')"
-              >Literatura</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('MINIATURAS')"
-              >Miniaturas</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('ROUPAS')"
-              >Roupas</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('TABULEIROS')"
-              >Tabuleiros</b-dropdown-item
-            >
-          </b-dropdown>
+          <router-link to="/produtos">Produtos</router-link>
         </b-col>
         <b-col style="padding: 0">
           <router-link to="/">Favoritos</router-link>
@@ -130,13 +105,7 @@
               style="height: 50vh"
             />
           </div>
-          <div v-if="selectedProduto?.desconto <= 0">
-            <p>
-              <strong>Preço:</strong> R${{ selectedProduto?.preco.toFixed(2) }}
-            </p>
-            <p><strong>Descrição:</strong> {{ selectedProduto?.desc }}</p>
-          </div>
-          <div v-else>
+          <div>
             <p>
               <strong>Preço:</strong>
               <s>R${{ selectedProduto?.preco.toFixed(2) }}</s> R${{
@@ -238,7 +207,7 @@ export default {
     produtosFiltrados() {
       // Filtra os produtos com base na categoria selecionada
       return this.produtos.filter(
-        (produto) => produto.catg === this.selectedOption
+        (produto) => produto.desconto > 0 && produto.desconto <= 1
       );
     },
   },
