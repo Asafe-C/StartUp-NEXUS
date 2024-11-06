@@ -74,7 +74,7 @@
     </nav>
     <main>
       <h1 class="display-1" style="text-align: center">
-        SEÇÃO DE {{ this.selectedOption }}
+        SEÇÃO DE DESCONTOS
       </h1>
       <br />
       <section>
