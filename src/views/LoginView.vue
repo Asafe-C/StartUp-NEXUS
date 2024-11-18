@@ -16,7 +16,7 @@
                                 <b-input-group-prepend is-text>
                                     <b-icon icon="person-fill"></b-icon>
                                 </b-input-group-prepend>
-                                <b-form-input type="text" placeholder="E-MAIL" style="text-align: center;" v-model="form.email" :state="stateEmail" trim required></b-form-input>
+                                <b-form-input type="text" placeholder="USUÁRIO" style="text-align: center;" v-model="form.user" :state="stateEmail" trim required></b-form-input>
                             </b-input-group>
                             <b-input-group class="mb-2">
                                 <b-input-group-prepend is-text>
@@ -38,15 +38,22 @@
     data() {
         return {
             form: {
-            email: '',
-            senha: '',
-            }
+                user: '',
+                senha: '',
+            },
+            userCorreto: localStorage.getItem("emailUsuario"),
+            senhaCorreta: localStorage.getItem("senhaUsuario"),
         }
         },
         methods: {
-        onSubmit() {
+        onSubmit(event) {
             event.preventDefault()
-            alert(JSON.stringify(this.form))
+            if (this.form.user == this.userCorreto && this.form.senha == this.senhaCorreta) {
+                localStorage.setItem("isLogged", 'true');
+                this.$router.push('/');
+            }else{
+                alert("Usuário ou Senha incorretos!")
+            }
         },
         validateState(ref) {
         if (
@@ -61,7 +68,7 @@
     computed: {
             stateEmail() {
                 const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return this.form.email.length > 0 && regexEmail.test(this.form.email)
+                return this.form.user.length > 0 && regexEmail.test(this.form.user)
             },
             stateSenha() {
                 return this.form.senha.length >= 6

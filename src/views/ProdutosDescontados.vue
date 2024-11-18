@@ -22,7 +22,7 @@
           ></b-form-input>
         </b-input-group>
         <div class="login">
-          <div v-if="usuarioAtivo == true" class="loginInterno">
+          <div v-if="usuarioActivo" class="loginInterno">
             <img
               style="margin: auto auto auto 0.9vw; width: 50px"
               src="/images/do-utilizador.png"
@@ -195,8 +195,8 @@ export default {
   name: "HomeView",
   data() {
     return {
-      nomeExibicao: "Mariano Machado",
-      usuarioAtivo: false,
+      nomeExibicao: (localStorage.getItem('pNomeUsuario')+' '+localStorage.getItem('sobrenomeUsuario')),
+      usuarioActivo: localStorage.getItem('isLogged') === 'true',
       selectedOption: "COLECIONÁVEIS",
       produtos: [], // Carregue os produtos aqui
       selectedProduto: null, // Para armazenar o produto selecionado no modal

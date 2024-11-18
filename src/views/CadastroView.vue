@@ -154,6 +154,16 @@
 </template>
 
 <script>
+  localStorage.setItem("pNomeUsuario", "");
+  localStorage.setItem("sobrenomeUsuario", "");
+  localStorage.setItem("CPFUsuario", "");
+  localStorage.setItem("dataDeNascimento", "");
+  localStorage.setItem("CEPUsuario", "");
+  localStorage.setItem("TelefoneDoUsuario", "");
+  localStorage.setItem("emailUsuario", "");
+  localStorage.setItem("senhaUsuario", "");
+  localStorage.setItem("isLogged", 'false');
+
   export default {
     data() {
       return {
@@ -166,13 +176,21 @@
           cepUser: '',
           emailUser: '',
           senhaUser: '',
-        }
+        },
       }
     },
     methods: {
-      onSubmit() {
+      onSubmit(event) {
         event.preventDefault()
-        alert(JSON.stringify(this.form))
+        localStorage.setItem("emailUsuario", this.form.emailUser);
+        localStorage.setItem("senhaUsuario", this.form.senhaUser);
+        localStorage.setItem("pNomeUsuario", this.form.pNomeUser);
+        localStorage.setItem("sobrenomeUsuario", this.form.sobrenomeUser);
+        localStorage.setItem("CPFUsuario", this.form.cpfUser);
+        localStorage.setItem("CEPUsuario", this.form.cepUser);
+        localStorage.setItem("TelefoneDoUsuario", this.form.telUser);
+        localStorage.setItem("dataDeNascimento", this.form.nascUser);
+        this.$router.push('/login');
       }
     }
   }

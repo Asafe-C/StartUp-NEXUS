@@ -10,7 +10,7 @@
           <b-form-input type="search" placeholder="Pesquisar produtos"></b-form-input>
         </b-input-group>
         <div class="login">
-            <div v-if="usuarioAtivo == true" class="loginInterno">
+            <div v-if="usuarioActivo" class="loginInterno">
               <img style="margin: auto auto auto 0.9vw; width: 50px;" src="/images/do-utilizador.png" alt="Login"/>
               <div class="userName">
                 <p style="color: white; font-weight: 600; margin: auto 0.9vw;">{{nomeExibicao}}</p>
@@ -116,6 +116,7 @@
 // @ is an alias to /src
 import CarrosselDesc from '@/components/CarrosselDesc.vue';
 import CarrosselRec from '@/components/CarrosselRec.vue';
+
 export default {
   name: "HomeView",
   components:{
@@ -124,8 +125,8 @@ export default {
   },
   data(){
     return{
-      nomeExibicao: 'Mariano Machado',
-      usuarioAtivo: false,
+      nomeExibicao: (localStorage.getItem('pNomeUsuario')+' '+localStorage.getItem('sobrenomeUsuario')),
+      usuarioActivo: localStorage.getItem('isLogged') === 'true',
     }
   },
   methods: {
@@ -133,7 +134,7 @@ export default {
       this.selectedOption = option; // Atualiza a variável com a opção escolhida
       this.$router.push({ name: 'produtos'}); // Redireciona para a mesma página
     }
-  }
+  },
 };
 </script>
 
