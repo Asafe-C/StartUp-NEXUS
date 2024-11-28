@@ -163,6 +163,8 @@
   localStorage.setItem("emailUsuario", "");
   localStorage.setItem("senhaUsuario", "");
   localStorage.setItem("isLogged", 'false');
+  localStorage.setItem("favoritos", JSON.stringify([]));
+  localStorage.setItem("carrinho", JSON.stringify([]));
 
   export default {
     data() {
@@ -197,51 +199,5 @@
 </script>
 
 <style>
-  header{
-    background-color: #190C3C;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .logo{
-    height: 200px;
-    width: auto;
-  }
-  
-  .cep {
-    text-decoration: none;
-    color: #220a60;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
-  button.btn.btn-secondary{
-    background-color: #220a60;
-  }
-
-  button.btn.btn-secondary:hover{
-    background-color: #1a0747;
-  }
-
-  footer{
-    text-align: center;
-    background-color: #1D0D46;
-    color: #fff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 3vh 0;
-  }
-
-  .imgF{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3cqw;
-}
-
-  .if{
-    height: 60px;
-    width: auto;
-    margin: 1vw;
-    display: flex;
-  }
+  @import '/public/css/cadastro.css';
 </style>

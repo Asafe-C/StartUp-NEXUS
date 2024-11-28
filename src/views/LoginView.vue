@@ -78,57 +78,5 @@
 </script>
 
 <style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-color: #fcfafa;
-}
-
-main {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 55% 45%;
-}
-
-.ladoEsquerdo {
-    background: url('/public/images/login/Fundo\ \(Login\).jpg') no-repeat center center;
-    background-size: cover;
-}
-
-.ladoDireito {
-    background-color: whitesmoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login {
-    width: 60%;
-    text-align: center;
-}
-
-.iconeLogin img{
-    width: 150px;
-}
-
-h2 {
-    margin-bottom: 20px;
-}
-
-button.btn.btn-secondary{
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #220a60;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button.btn.btn-secondary:hover{
-    background-color: #1a0747;
-}
+@import '/public/css/login.css';
 </style>

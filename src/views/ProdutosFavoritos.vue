@@ -62,32 +62,7 @@
         "
       >
         <b-col style="padding: 0">
-          <b-dropdown id="categoria" text="Categorias" class="w-100" no-caret>
-            <b-dropdown-item @click="selectOption('COLECIONÁVEIS')"
-              >Colecionáveis</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('COSPLAYS')"
-              >Cosplays</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('DECORAÇÕES')"
-              >Decorações</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('JOGOS')"
-              >Jogos</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('LITERATURA')"
-              >Literatura</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('MINIATURAS')"
-              >Miniaturas</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('ROUPAS')"
-              >Roupas</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectOption('TABULEIROS')"
-              >Tabuleiros</b-dropdown-item
-            >
-          </b-dropdown>
+          <router-link to="/produtos">Produtos</router-link>
         </b-col>
         <b-col style="padding: 0">
           <router-link to="/favoritos">Favoritos</router-link>
@@ -99,7 +74,7 @@
     </nav>
     <main>
       <h1 class="display-1" style="text-align: center">
-        SEÇÃO DE {{ this.selectedOption }}
+        SEÇÃO DE FAVORITOS
       </h1>
       <br />
       <section>
@@ -238,23 +213,10 @@ export default {
     return {
       nomeExibicao: (localStorage.getItem('pNomeUsuario')+' '+localStorage.getItem('sobrenomeUsuario')),
       usuarioActivo: localStorage.getItem('isLogged') === 'true',
-      selectedOption: "COLECIONÁVEIS",
       produtos: [], // Carregue os produtos aqui
       selectedProduto: null, // Para armazenar o produto selecionado no modal
       favoritos: JSON.parse(localStorage.getItem("favoritos")) || [],
     };
-  },
-
-  computed: {
-    produtosFiltrados() {
-      // Filtra os produtos com base na categoria selecionada
-      return this.produtos.filter(
-        (produto) => produto.catg === this.selectedOption,
-      );
-    },
-    isFavoritedModal() {
-      return this.favoritos.includes(this.selectedProduto?.id); // Verifica se o produto está nos favoritos
-    },
   },
 
   created() {
@@ -267,6 +229,18 @@ export default {
       .catch((error) => console.error("Erro ao carregar produtos:", error));
   },
 
+  computed: {
+    produtosFiltrados() {
+      // Filtra os produtos com base na categoria selecionada
+      return this.produtos.filter(
+        (produto) => this.favoritos.includes(produto?.id)
+      );
+    },
+    isFavoritedModal() {
+      return this.favoritos.includes(this.selectedProduto?.id); // Verifica se o produto está nos favoritos
+    },
+  },
+
   methods: {
     toggleFavoriteModal() {
       const produtoId = this.selectedProduto?.id;
@@ -277,12 +251,9 @@ export default {
       }
       this.saveFavorites(); // Salva no localStorage
     },
+
     saveFavorites() {
       localStorage.setItem("favoritos", JSON.stringify(this.favoritos));
-    },
-
-    selectOption(option) {
-      this.selectedOption = option; // Atualiza a variável com a opção escolhida
     },
 
     openModal(produto) {
@@ -297,30 +268,6 @@ export default {
 @import '/public/css/header&footer.css';
 @import '/public/css/gradeprodutos.css';
 @import "/public/css/modaisecarrinho.css";
-
-button#categoria__BV_toggle_ {
-  background-color: transparent;
-  padding: 2vh;
-  font-weight: 600;
-  border: none;
-}
-
-.dropdown-menu.show {
-  width: 100%;
-  background-color: #231350;
-  text-align: center;
-  padding: 0;
-  margin: 0.8vh -1.4vw;
-}
-
-a.dropdown-item {
-  color: #e6e6e6;
-}
-
-a.dropdown-item:hover {
-  color: #e6e6e6;
-  background-color: #3b2577;
-}
 
 /* Coração do Modal */
 .fav{

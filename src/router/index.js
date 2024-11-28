@@ -32,6 +32,11 @@ const routes = [
     path: '/promocoes',
     name: 'promocoes',
     component: () => import('../views/ProdutosDescontados.vue')
+  },
+  {
+    path: '/favoritos',
+    name: 'favoritos',
+    component: () => import('../views/ProdutosFavoritos.vue')
   }
 ]
 

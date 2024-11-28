@@ -65,7 +65,7 @@
           <router-link to="/produtos">Produtos</router-link>
         </b-col>
         <b-col style="padding: 0">
-          <router-link to="/">Favoritos</router-link>
+          <router-link to="/favoritos">Favoritos</router-link>
         </b-col>
         <b-col style="padding: 0">
           <router-link to="/promocoes">Promoções</router-link>
@@ -74,10 +74,11 @@
     </nav>
     <main>
       <h1 class="display-1" style="text-align: center">
-        SEÇÃO DE DESCONTOS
+        SEÇÃO DE PROMOÇÕES
       </h1>
       <br />
       <section>
+        <!--Produtos-->
         <b-row cols="3">
           <div
             v-for="(produto, index) in produtosFiltrados"
@@ -97,7 +98,16 @@
             </div>
           </div>
         </b-row>
+
+        <!--Modal-->
         <b-modal id="modal" size="lg" :title="selectedProduto?.nome">
+          <b-button
+            variant="link"
+            @click="toggleFavoriteModal"
+            class="fav"
+          >
+            <b-icon :icon="isFavoritedModal ? 'heart-fill' : 'heart'"></b-icon>
+          </b-button>
           <div style="display: flex; justify-content: center">
             <img
               :src="selectedProduto?.img"
@@ -105,7 +115,13 @@
               style="height: 50vh"
             />
           </div>
-          <div>
+          <div v-if="selectedProduto?.desconto <= 0">
+            <p>
+              <strong>Preço:</strong> R${{ selectedProduto?.preco.toFixed(2) }}
+            </p>
+            <p><strong>Descrição:</strong> {{ selectedProduto?.desc }}</p>
+          </div>
+          <div v-else>
             <p>
               <strong>Preço:</strong>
               <s>R${{ selectedProduto?.preco.toFixed(2) }}</s> R${{
@@ -197,19 +213,10 @@ export default {
     return {
       nomeExibicao: (localStorage.getItem('pNomeUsuario')+' '+localStorage.getItem('sobrenomeUsuario')),
       usuarioActivo: localStorage.getItem('isLogged') === 'true',
-      selectedOption: "COLECIONÁVEIS",
       produtos: [], // Carregue os produtos aqui
       selectedProduto: null, // Para armazenar o produto selecionado no modal
+      favoritos: JSON.parse(localStorage.getItem("favoritos")) || [],
     };
-  },
-
-  computed: {
-    produtosFiltrados() {
-      // Filtra os produtos com base na categoria selecionada
-      return this.produtos.filter(
-        (produto) => produto.desconto > 0 && produto.desconto <= 1
-      );
-    },
   },
 
   created() {
@@ -222,9 +229,31 @@ export default {
       .catch((error) => console.error("Erro ao carregar produtos:", error));
   },
 
+  computed: {
+    produtosFiltrados() {
+      // Filtra os produtos com base na categoria selecionada
+      return this.produtos.filter(
+        (produto) => produto.desconto > 0 && produto.desconto <= 1
+      );
+    },
+    isFavoritedModal() {
+      return this.favoritos.includes(this.selectedProduto?.id); // Verifica se o produto está nos favoritos
+    },
+  },
+
   methods: {
-    selectOption(option) {
-      this.selectedOption = option; // Atualiza a variável com a opção escolhida
+    toggleFavoriteModal() {
+      const produtoId = this.selectedProduto?.id;
+      if (this.favoritos.includes(produtoId)) {
+        this.favoritos = this.favoritos.filter(id => id !== produtoId); // Remove do favorito
+      } else {
+        this.favoritos.push(produtoId); // Adiciona aos favoritos
+      }
+      this.saveFavorites(); // Salva no localStorage
+    },
+
+    saveFavorites() {
+      localStorage.setItem("favoritos", JSON.stringify(this.favoritos));
     },
 
     openModal(produto) {
@@ -236,137 +265,13 @@ export default {
 </script>
 
 <style>
-header {
-  background-color: #190c3c;
-  padding: 3.5vh;
-}
+@import '/public/css/header&footer.css';
+@import '/public/css/gradeprodutos.css';
+@import "/public/css/modaisecarrinho.css";
 
-.interiorHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.loginInterno {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  background-color: #23154b;
-  text-decoration: none;
-  padding: 1vh;
-  border-radius: 16px;
-  width: 16vw;
-}
-
-.userName {
-  width: 15vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.userName > p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.LoginInterno2 {
-  width: 18vw;
-}
-
-.loginCadastro {
-  text-decoration: none;
-  color: #fff;
-}
-
-.loginCadastro:hover {
-  text-decoration: none;
-  color: #e6e6e6;
-}
-
-button#categoria__BV_toggle_ {
-  background-color: transparent;
-  padding: 2vh;
-  font-weight: 600;
-  border: none;
-}
-
-.dropdown-menu.show {
-  width: 100%;
-  background-color: #231350;
-  text-align: center;
-  padding: 0;
-  margin: 0.8vh -1.4vw;
-}
-
-a.dropdown-item {
-  color: #e6e6e6;
-}
-
-a.dropdown-item:hover {
-  color: #e6e6e6;
-  background-color: #3b2577;
-}
-
-section {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  width: 90%;
-}
-
-.card {
-  width: 23vw;
-  margin: 2vh auto;
-}
-
-.productName {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.productName > h5 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  text-align: center;
-}
-
-footer {
-  text-align: center;
-  background-color: #1d0d46;
-  color: #fff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  padding: 3vh 0;
-}
-
-.imgF {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3cqw;
-}
-
-.if {
-  height: 60px;
-  width: auto;
-  margin: 1vw;
-  display: flex;
-}
-
-header#modal___BV_modal_header_.modal-header {
-  background-color: #fff;
-}
-
-footer#modal___BV_modal_footer_.modal-footer {
-  background-color: #ffffff;
+/* Coração do Modal */
+.fav{
+  color: #42076b; 
+  float: right;
 }
 </style>

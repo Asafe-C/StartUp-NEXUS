@@ -1,0 +1,37 @@
+/* Modal */
+header#modal___BV_modal_header_.modal-header, footer#modal___BV_modal_footer_.modal-footer {
+    background-color: #fff;
+}
+
+/* Carrinho */
+header.b-sidebar-header{
+    background-color: #f8f8f8;
+}
+
+div.b-sidebar-body{
+    background-color: #fdfdfd;
+}
+
+footer.b-sidebar-footer{
+    background-color: #f8f8f8;
+}
+
+.headerCarrinho{
+    display: grid;
+    grid-template-columns: 3fr 0.25fr;
+    width: 100%;
+}
+
+.corpoCarrinho{
+    overflow: auto;
+}
+
+.produtoCarrinho{
+    margin: 0 0;
+    border: 0.5px rgb(126, 126, 126) solid;
+    border-left: none;
+    border-right: none;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    place-items: center;
+}
