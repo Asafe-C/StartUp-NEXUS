@@ -13,45 +13,9 @@
               filter: drop-shadow(5px 5px 5px black);
             "
         /></router-link>
-        <!--Barra de Pesquisa-->
-        <div class="barraPesquisa">
-          <b-input-group size="lg" class="mb-0">
-            <b-input-group-prepend is-text>
-              <b-icon icon="search"></b-icon>
-            </b-input-group-prepend>
-            <b-form-input
-              type="search"
-              placeholder="Pesquisar produtos"
-            ></b-form-input>
-          </b-input-group>
-        </div>
+        <BarraDePesquisa></BarraDePesquisa>
         <div class="loginCarrinho">
-          <!--Login-->
-          <div class="login">
-            <div v-if="usuarioActivo" class="loginInterno">
-              <img
-                style="margin: auto; width: 30px"
-                src="/images/do-utilizador.png"
-                alt="Login"
-              />
-              <div class="userName">
-                <p style="color: white; font-weight: 600; margin: auto">
-                  {{ nomeExibicao }}
-                </p>
-              </div>
-            </div>
-            <div v-else class="loginInterno loginInterno2">
-              <p style="color: white; font-weight: 600; margin: auto">
-                <router-link to="/login" class="loginCadastro"
-                  >Login</router-link
-                >
-                |
-                <router-link to="/cadastro" class="loginCadastro"
-                  >Cadastre-se</router-link
-                >
-              </p>
-            </div>
-          </div>
+          <CaixaUser></CaixaUser>
           <CarrinhoDeCompras></CarrinhoDeCompras>
         </div>
       </div>
@@ -62,6 +26,7 @@
           height: 100%;
           justify-content: center;
           align-items: center;
+          margin: auto;
           width: 100%;
         "
       >
@@ -80,7 +45,7 @@
       <section class="dest">
         <div class="expansao">
           <div class="destaques">
-            <h1 style="text-align: center">Produtos em Destaque</h1>
+            <h1 class="titulo">Produtos em Destaque</h1>
             <br />
             <b-carousel
               id="destaquesCarrossel"
@@ -112,7 +77,7 @@
         </div>
       </section>
       <section class="expansao">
-        <h1 style="text-align: center">Seus Favoritos</h1>
+        <h1 class="titulo">Seus Favoritos</h1>
         <br />
         <p v-if="favorictos.length === 0" style="text-align: center">
           Você não tem favoritos no momento.
@@ -187,20 +152,19 @@
 // @ is an alias to /src
 import CarrosselRec from "@/components/CarrosselRec.vue";
 import CarrinhoDeCompras from "@/components/CarrinhoDeCompras.vue";
+import CaixaUser from "@/components/CaixaUser.vue";
+import BarraDePesquisa from "@/components/BarraDePesquisa.vue";
 
 export default {
   name: "HomeView",
   components: {
-    CarrosselRec,
     CarrinhoDeCompras,
+    CaixaUser,
+    BarraDePesquisa,
+    CarrosselRec,
   },
   data() {
     return {
-      nomeExibicao:
-        localStorage.getItem("pNomeUsuario") +
-        " " +
-        localStorage.getItem("sobrenomeUsuario"),
-      usuarioActivo: localStorage.getItem("isLogged") === "true",
       favorictos: JSON.parse(localStorage.getItem("favoritos")) || [],
     };
   },
@@ -233,5 +197,15 @@ section,
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
   border-radius: 25px;
   margin-bottom: 10vh;
+}
+
+.titulo{
+  text-align: center;
+}
+
+@media (max-width: 359px){
+  .titulo{
+    font-size: 30px;
+  }
 }
 </style>

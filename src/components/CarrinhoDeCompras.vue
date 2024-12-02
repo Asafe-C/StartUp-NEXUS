@@ -5,7 +5,7 @@
       <b-button
         v-b-toggle.sidebar-right
         style="background-color: transparent; border: none"
-        ><b-icon icon="cart3" aria-hidden="true" scale="2"></b-icon
+        ><b-icon icon="cart3" aria-hidden="true" :scale="tamanhoDaTela ? 1.45 : 2"></b-icon
       ></b-button>
       <!--Carrinho-->
       <b-sidebar id="sidebar-right" right shadow backdrop>
@@ -69,6 +69,7 @@ export default {
       produtos: [], // Array de produtos
       selectedProduto: null, // Para armazenar o produto selecionado no modal
       carrinho: JSON.parse(localStorage.getItem("carrinho")) || [],
+      tamanhoDaTela: window.innerWidth <= 375,
     };
   },
   created() {
@@ -87,7 +88,17 @@ export default {
       );
     },
   },
-  methods: {},
+  methods: {
+    updateScreenSize() {
+      this.tamanhoDaTela = window.innerWidth <= 375
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.updateScreenSize);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.updateScreenSize);
+  },
 };
 </script>
 

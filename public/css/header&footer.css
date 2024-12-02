@@ -121,6 +121,11 @@ footer {
         grid-template-columns: 1fr 3fr;
     }
 
+    .loginInterno2{
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+
     .carrinho{
         grid-column: 3;                        /* Terceira coluna */
         grid-row: 2;   
@@ -153,13 +158,19 @@ footer {
 @media (max-width: 555px){
     .loginInterno {
         width: 45vw; 
-        grid-template-columns: 1fr 3fr;
     }
 }
 
-@media (max-width: 374px){
+@media (max-width: 420px){
     .loginInterno {
-        width: 35vw; 
-        grid-template-columns: 1fr 3fr;
+        width: 40vw;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 330px){
+    .loginInterno {
+        width: 35vw;
+        font-size: 10px;
     }
 }

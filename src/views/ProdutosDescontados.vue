@@ -2,7 +2,8 @@
   <body>
     <header>
       <div class="interiorHeader">
-        <router-link to="/"
+        <!--Logo-->
+        <router-link to="/" class="logo"
           ><img
             src="/images/Logo (Sem Fundo).png"
             alt="logo da startup"
@@ -12,44 +13,11 @@
               filter: drop-shadow(5px 5px 5px black);
             "
         /></router-link>
-        <b-input-group size="lg" class="mb-0" style="width: 50vw">
-          <b-input-group-prepend is-text>
-            <b-icon icon="search"></b-icon>
-          </b-input-group-prepend>
-          <b-form-input
-            type="search"
-            placeholder="Pesquisar produtos"
-          ></b-form-input>
-        </b-input-group>
-        <div class="login">
-          <div v-if="usuarioActivo" class="loginInterno">
-            <img
-              style="margin: auto auto auto 0.9vw; width: 50px"
-              src="/images/do-utilizador.png"
-              alt="Login"
-            />
-            <div class="userName">
-              <p style="color: white; font-weight: 600; margin: auto 0.9vw">
-                {{ nomeExibicao }}
-              </p>
-            </div>
-          </div>
-          <div v-else class="loginInterno LoginInterno2">
-            <img
-              style="margin: auto auto auto 0.9vw; width: 50px"
-              src="/images/do-utilizador.png"
-              alt="Login"
-            />
-            <p style="color: white; font-weight: 600; margin: auto 0.9vw">
-              <router-link to="/login" class="loginCadastro">Login</router-link>
-              |
-              <router-link to="/cadastro" class="loginCadastro"
-                >Cadastre-se</router-link
-              >
-            </p>
-          </div>
+        <BarraDePesquisa></BarraDePesquisa>
+        <div class="loginCarrinho">
+          <CaixaUser></CaixaUser>
+          <CarrinhoDeCompras></CarrinhoDeCompras>
         </div>
-        <img src="/images/carrinho-de-compras.png" alt="" style="width: 50px" />
       </div>
     </header>
     <nav>
@@ -59,6 +27,7 @@
           justify-content: center;
           align-items: center;
           width: 100%;
+          margin: auto;
         "
       >
         <b-col style="padding: 0">
@@ -73,82 +42,13 @@
       </b-row>
     </nav>
     <main>
-      <h1 class="display-1" style="text-align: center">
-        SEÇÃO DE PROMOÇÕES
-      </h1>
+      <h1 class="display-1" style="text-align: center">SEÇÃO DE PROMOÇÕES</h1>
       <br />
       <section>
-        <!--Produtos-->
-        <b-row cols="3">
-          <div
-            v-for="(produto, index) in produtosFiltrados"
-            :key="index"
-            @click="openModal(produto)"
-          >
-            <div class="card">
-              <img
-                :src="produto.img"
-                class="card-img-top"
-                alt="Produto"
-                style="height: 30vh; object-fit: cover"
-              />
-              <div class="card-body productName">
-                <h5 class="card-title">{{ produto.nome }}</h5>
-              </div>
-            </div>
-          </div>
-        </b-row>
-
-        <!--Modal-->
-        <b-modal id="modal" size="lg" :title="selectedProduto?.nome">
-          <b-button
-            variant="link"
-            @click="toggleFavoriteModal"
-            class="fav"
-          >
-            <b-icon :icon="isFavoritedModal ? 'heart-fill' : 'heart'"></b-icon>
-          </b-button>
-          <div style="display: flex; justify-content: center">
-            <img
-              :src="selectedProduto?.img"
-              alt="Produto"
-              style="height: 50vh"
-            />
-          </div>
-          <div v-if="selectedProduto?.desconto <= 0">
-            <p>
-              <strong>Preço:</strong> R${{ selectedProduto?.preco.toFixed(2) }}
-            </p>
-            <p><strong>Descrição:</strong> {{ selectedProduto?.desc }}</p>
-          </div>
-          <div v-else>
-            <p>
-              <strong>Preço:</strong>
-              <s>R${{ selectedProduto?.preco.toFixed(2) }}</s> R${{
-                (
-                  selectedProduto?.preco -
-                  selectedProduto?.desconto * selectedProduto?.preco
-                ).toFixed(2)
-              }}
-            </p>
-            <p>
-              <strong>Desconto:</strong> {{ selectedProduto?.desconto * 100 }}%
-            </p>
-            <p><strong>Descrição:</strong> {{ selectedProduto?.desc }}</p>
-          </div>
-          <template #modal-footer>
-            <div class="w-100">
-              <p class="float-left">Modal Footer Content</p>
-              <b-button
-                style="background-color: #1d0d46"
-                class="float-right"
-                @click="show = false"
-              >
-                Adicionar ao Carrinho
-              </b-button>
-            </div>
-          </template>
-        </b-modal>
+        <GradeProdutos
+          :produtos="produtos"
+          :filtro="(produto) => produto.desconto > 0 && produto.desconto <= 1"
+        ></GradeProdutos>
       </section>
     </main>
     <footer>
@@ -207,12 +107,23 @@
 </template>
 
 <script>
+// @ is an alias to /src
+import CarrinhoDeCompras from "@/components/CarrinhoDeCompras.vue";
+import CaixaUser from "@/components/CaixaUser.vue";
+import BarraDePesquisa from "@/components/BarraDePesquisa.vue";
+import GradeProdutos from "@/components/GradeProdutos.vue";
+
 export default {
   name: "HomeView",
+  components: {
+    CarrinhoDeCompras,
+    CaixaUser,
+    BarraDePesquisa,
+    GradeProdutos,
+  },
   data() {
     return {
-      nomeExibicao: (localStorage.getItem('pNomeUsuario')+' '+localStorage.getItem('sobrenomeUsuario')),
-      usuarioActivo: localStorage.getItem('isLogged') === 'true',
+      usuarioActivo: localStorage.getItem("isLogged") === "true",
       produtos: [], // Carregue os produtos aqui
       selectedProduto: null, // Para armazenar o produto selecionado no modal
       favoritos: JSON.parse(localStorage.getItem("favoritos")) || [],
@@ -228,50 +139,17 @@ export default {
       })
       .catch((error) => console.error("Erro ao carregar produtos:", error));
   },
-
-  computed: {
-    produtosFiltrados() {
-      // Filtra os produtos com base na categoria selecionada
-      return this.produtos.filter(
-        (produto) => produto.desconto > 0 && produto.desconto <= 1
-      );
-    },
-    isFavoritedModal() {
-      return this.favoritos.includes(this.selectedProduto?.id); // Verifica se o produto está nos favoritos
-    },
-  },
-
-  methods: {
-    toggleFavoriteModal() {
-      const produtoId = this.selectedProduto?.id;
-      if (this.favoritos.includes(produtoId)) {
-        this.favoritos = this.favoritos.filter(id => id !== produtoId); // Remove do favorito
-      } else {
-        this.favoritos.push(produtoId); // Adiciona aos favoritos
-      }
-      this.saveFavorites(); // Salva no localStorage
-    },
-
-    saveFavorites() {
-      localStorage.setItem("favoritos", JSON.stringify(this.favoritos));
-    },
-
-    openModal(produto) {
-      this.selectedProduto = produto; // Armazena o produto selecionado
-      this.$bvModal.show("modal"); // Abre o modal
-    },
-  },
 };
 </script>
 
 <style>
-@import '/public/css/header&footer.css';
-@import '/public/css/gradeprodutos.css';
+@import "/public/css/header&footer.css";
+@import "/public/css/gradeprodutos.css";
 @import "/public/css/modaisecarrinho.css";
 
 /* Coração do Modal */
-.fav{
-  color: #42076b; 
+.fav {
+  color: #42076b;
   float: right;
 }
 </style>

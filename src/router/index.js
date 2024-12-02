@@ -37,7 +37,12 @@ const routes = [
     path: '/favoritos',
     name: 'favoritos',
     component: () => import('../views/ProdutosFavoritos.vue')
-  }
+  },
+  // {
+  //   path: '/resultados',
+  //   name: 'pesquisa',
+  //   component: () => import('../views/Pesquisa.vue')
+  // },
 ]
 
 const router = new VueRouter({

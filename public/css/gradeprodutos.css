@@ -25,3 +25,26 @@ section {
     white-space: nowrap;
     text-align: center;
 }
+
+@media (max-width: 700px){
+    .display-1{
+        font-size: 45px;
+    }
+    .card {
+        width: 38vw;
+        margin: 2vh auto;
+    }
+}
+
+@media (max-width: 425px){
+    .card {
+        width: 75vw;
+        margin: 2vh auto;
+    }
+}
+
+@media (min-width: 769px){
+    .imgDoModal{
+        height: 50vh;
+    }
+}
