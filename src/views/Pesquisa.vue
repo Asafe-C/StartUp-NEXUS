@@ -26,8 +26,8 @@
           height: 100%;
           justify-content: center;
           align-items: center;
-          margin: auto;
           width: 100%;
+          margin: auto;
         "
       >
         <b-col style="padding: 0">
@@ -42,12 +42,13 @@
       </b-row>
     </nav>
     <main>
-      <h1 class="display-1" style="text-align: center">SEÇÃO DE FAVORITOS</h1>
+      <h3 v-if="produtosFiltrados.length === 0" class="display-3" style="text-align: center;">INFELIZMENTE NÃO TEMOS NADA RELACIONADO À "{{ varPesquisa.toUpperCase() }}"</h3>
+      <h1 v-else class="display-1" style="text-align: center">RESULTADOS PARA "{{ varPesquisa.toUpperCase() }}"</h1>
       <br />
       <section>
-        <GradeProdutos v-if="estaLogado"
+        <GradeProdutos
           :produtos="produtos"
-          :filtro="(produto) => favoritos.includes(produto?.id)"
+          :filtro="(produto) => produto.nome.toLowerCase().includes(varPesquisa.toLowerCase())"
         ></GradeProdutos>
       </section>
     </main>
@@ -123,9 +124,10 @@ export default {
   },
   data() {
     return {
+      usuarioActivo: localStorage.getItem("isLogged") === "true",
       produtos: [], // Carregue os produtos aqui
+      selectedProduto: null, // Para armazenar o produto selecionado no modal
       favoritos: JSON.parse(localStorage.getItem("favoritos")) || [],
-      estaLogado: localStorage.getItem("isLogged") === 'true',
     };
   },
 
@@ -137,6 +139,41 @@ export default {
         this.produtos = data.produtos || []; // Atribuir produtos
       })
       .catch((error) => console.error("Erro ao carregar produtos:", error));
+
+    // Obtém o termo de busca da query string
+    this.varPesquisa = this.$route.query.q || "";
+  },
+
+  computed: {
+    produtosFiltrados() {
+      if (this.varPesquisa) {
+        // Filtra os produtos pelo nome
+        return this.produtos.filter((produto) =>
+          produto.nome.toLowerCase().includes(this.varPesquisa.toLowerCase())
+        );
+      }
+      return this.produtos; // Se não houver pesquisa, retorna todos os produtos
+    },
+  },
+
+  watch: {
+    "$route.query.q"(newQuery) {
+      this.varPesquisa = newQuery;
+    },
+  },
+
+  methods: {
+    fetchResults() {
+      // Simula resultados; substitua por lógica real (ex.: chamada à API)
+      if (this.varPesquisa) {
+        this.results = [
+          `Resultado relacionado a ${this.varPesquisa}`,
+          `Outra sugestão para ${this.varPesquisa}`
+        ];
+      } else {
+        this.results = [];
+      }
+    }
   },
 };
 </script>

@@ -33,5 +33,4 @@ footer.b-sidebar-footer{
     border-right: none;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    place-items: center;
 }

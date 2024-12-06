@@ -32,7 +32,7 @@
 
     <!--Modal-->
     <b-modal id="modal" size="lg" :title="selectedProduto?.nome" style="display: grid">
-          <b-button variant="link" @click="toggleFavoriteModal" class="fav">
+          <b-button v-if="estaLogado" variant="link" @click="toggleFavoriteModal" class="fav">
             <b-icon :icon="isFavoritedModal ? 'heart-fill' : 'heart'"></b-icon>
           </b-button>
           <div style="display: grid; place-items: center; width: 100%;">
@@ -64,12 +64,22 @@
           <b-button
             style="background-color: #1d0d46"
             class="float-right"
-            @click="show = false"
+            @click="adicionarAoCarrinho"
           >
             Adicionar ao Carrinho
           </b-button>
         </div>
       </template>
+    </b-modal>
+    <!--Modal caso o produto já esteja no carrinho-->
+    <b-modal id="modal-error" hide-footer hide-header style="display: grid; place-items: center;">
+      <br>
+      <div style="display: grid; place-items: center;">
+        <b-icon icon="x-circle" class="text-center" scale="4" variant="danger"></b-icon>
+      </div>
+      <br>
+      <hr>
+      <h4 class="my-4" style="text-align: center">O produto selecionado já está no carrinho!</h4>
     </b-modal>
   </div>
 </template>
@@ -87,7 +97,8 @@ export default {
       transitioning: false,
       selectedProduto: null, // Para armazenar o produto selecionado no modal
       favoritos: JSON.parse(localStorage.getItem("favoritos")) || [],
-      estaLogado: localStorage.getItem("isLogged"),
+      estaLogado: localStorage.getItem('isLogged') === 'true',
+      cesta: JSON.parse(localStorage.getItem("carrinho")) || [],
     };
   },
   created() {
@@ -180,6 +191,25 @@ export default {
       localStorage.setItem("favoritos", JSON.stringify(this.favoritos));
     },
 
+    adicionarAoCarrinho() {
+      const idProduto = this.selectedProduto?.id;
+      if (!idProduto) {
+        console.error("Produto selecionado inválido.");
+        return;
+      }
+      if (this.cesta.includes(idProduto)) {
+        this.$bvModal.hide("modal");
+        this.$bvModal.show("modal-error");
+      } else {
+        this.cesta.push(idProduto);
+        this.saveCarrinho();
+        this.$bvModal.hide("modal");
+      }
+    },
+    saveCarrinho() {
+      localStorage.setItem("carrinho", JSON.stringify(this.cesta));
+    },
+    
     openModal(produto) {
       this.selectedProduto = produto; // Armazena o produto selecionado
       this.$bvModal.show("modal"); // Abre o modal
