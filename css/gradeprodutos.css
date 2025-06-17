@@ -1,0 +1,50 @@
+section {
+    width: 90vw;
+    padding: 5vh;
+    margin: auto;
+    margin-bottom: 10vh;
+}
+
+.card {
+    width: 23vw;
+    margin: 2vh auto;
+}
+
+.productName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.productName>h5 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
+@media (max-width: 700px){
+    .display-1, .display-3{
+        font-size: 45px;
+    }
+    .card {
+        width: 38vw;
+        margin: 2vh auto;
+    }
+}
+
+@media (max-width: 425px){
+    .card {
+        width: 75vw;
+        margin: 2vh auto;
+    }
+}
+
+@media (min-width: 769px){
+    .imgDoModal{
+        height: 50vh;
+    }
+}
