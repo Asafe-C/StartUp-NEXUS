@@ -7,7 +7,7 @@
             <div class="ladoDireito"> <!--Parte com o Login-->
                 <div class="login">
                     <div class="iconeLogin"> <!--Ícone e Texto-->
-                        <img src="/images/login/user2.png" alt="Ícone de Usuário">
+                        <img src="/StartUp-NEXUS/images/login/user2.png" alt="Ícone de Usuário">
                         <h2>Faça seu Login</h2>
                     </div>
                     <div>

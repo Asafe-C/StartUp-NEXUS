@@ -5,7 +5,7 @@
         <!--Logo-->
         <router-link to="/" class="logo"
           ><img
-            src="/images/Logo (Sem Fundo).png"
+            src="/StartUp-NEXUS/images/Logo (Sem Fundo).png"
             alt="logo da startup"
             style="
               width: 100px;
@@ -56,29 +56,29 @@
       <!-- Pagamentos -->
       <h4>Formas de Pagamento</h4>
       <div class="imgF">
-        <img src="/images/footer/visa.png" alt="Visa" class="if" />
+        <img src="/StartUp-NEXUS/images/footer/visa.png" alt="Visa" class="if" />
         <img
-          src="/images/footer/mastercard_vrt_pos_92px_2x.png"
+          src="/StartUp-NEXUS/images/footer/mastercard_vrt_pos_92px_2x.png"
           alt="Mastercard"
           class="if"
         />
         <img
-          src="/images/footer/Banco_Itaú_logo.svg.png"
+          src="/StartUp-NEXUS/images/footer/Banco_Itaú_logo.svg.png"
           alt="Itaú"
           class="if"
         />
-        <img src="/images/footer/logo-pix-520x520.png" alt="Pix" class="if" />
+        <img src="/StartUp-NEXUS/images/footer/logo-pix-520x520.png" alt="Pix" class="if" />
       </div>
       <!-- Redes Sociais -->
       <h4>Redes Sociais</h4>
       <div class="imgF">
         <a href=""
-          ><img src="/images/footer/face.png" alt="Twitter" class="if"
+          ><img src="/StartUp-NEXUS/images/footer/face.png" alt="Twitter" class="if"
         /></a>
         <a
           href="https://www.instagram.com/escuderia.nexus?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw== "
           ><img
-            src="/images/footer/Instagram_icon.webp"
+            src="/StartUp-NEXUS/images/footer/Instagram_icon.webp"
             alt="Instagram"
             class="if"
         /></a>
@@ -88,13 +88,13 @@
       <div class="imgF">
         <a href=""
           ><img
-            src="/images/footer/whatsapp.png"
+            src="/StartUp-NEXUS/images/footer/whatsapp.png"
             alt="(81) 90000-0000"
             class="if"
         /></a>
         <a href=""
           ><img
-            src="/images/footer/gmail.png"
+            src="/StartUp-NEXUS/images/footer/gmail.png"
             alt="Nexus69@gmail.com"
             class="if"
         /></a>
@@ -133,7 +133,7 @@ export default {
 
   created() {
     // Carregar JSON de produtos
-    fetch("/produtos.json") // Certifique-se de que o arquivo está no diretório `public`
+    fetch("/StartUp-NEXUS/produtos.json") // Certifique-se de que o arquivo está no diretório `public`
       .then((response) => response.json())
       .then((data) => {
         this.produtos = data.produtos || []; // Atribuir produtos

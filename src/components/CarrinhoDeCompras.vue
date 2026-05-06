@@ -130,7 +130,7 @@ export default {
   },
   created() {
     // Carrega os produtos
-    fetch("/produtos.json")
+    fetch("/StartUp-NEXUS/produtos.json")
       .then((response) => response.json())
       .then((data) => {
         this.produtos = data.produtos || [];

@@ -3,7 +3,7 @@
     <div v-if="usuarioActivo" class="loginInterno">
       <img
         style="margin: auto; width: 30px"
-        src="/images/do-utilizador.png"
+        src="/StartUp-NEXUS/images/do-utilizador.png"
         alt="Login"
       />
       <div class="userName">
